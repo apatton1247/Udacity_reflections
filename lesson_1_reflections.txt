@@ -1,0 +1,72 @@
+How did viewing a diff between two versons of a file help you see the bug that was introduced?
+
+By using Git Bash's "diff -u [old file] [new file] setup, I was able to quickly
+tell that there were a number of lines that were changed (those that were
+prefixed with a plus or minus sign).  These changed lines allowed me to easily
+zero in on the actual line-changes, whether they were added content, like a new
+comment, or a changed definition/assignment.  Within just a few seconds I spotted
+a spelling error that had introduced a bug in the code.
+
+
+
+How could having easy access to the entire history of a file make you more efficient as a
+programmer in the long term?
+
+Having some sort of history of a project means that there's a verifiable, followable trail
+that I can use in the future to retrace my steps, if need be, so that I can understand why
+I made the decisions I did, and can understand my process.  If any errors creep up without
+an apparent cause, I can hopefully look back through the history of the project at the
+relevant points and find out why that error came about. Plus I can compare revisions much
+more easily and find out where I went wrong (or right!).
+
+
+
+What do you think are the pros and cons of manually choosing when to create a commit, like 
+you do in Git, vs having versions automatically saved, like Google Docs does?
+
+I definitely much prefer having to manually commit changes, like in Git, than having a
+program automatically save versions, like in Google Docs.  While the Google Docs method may
+work well for some word documents or excel files, that should always be fairly readable, code
+is a different story.  You should be able to have your versions of code mean something, and 
+be split in logical places, and hopefully be runnable. A lot of times, saving a version in the
+middle of a logical change, at least in my coding style, would end up saving bad code all the
+time, and wouldn't help in a version control sense.
+
+
+
+Why do you think some version control systems, like Git, allow saving multiple files in one
+commit, while others, like Google Docs, treat each file separately?
+
+This question is all about the expected use of the different systems.  Git, for instance, is
+primarily a code-working version control interface, and so expects there to be interaction with
+multiple files, and so it makes sense for it to keep simultaneously-changed multiple files
+together, as the changes to the files are hopefully logically linked to each other.  For systems
+like Google Docs, the emphasis is not so much on code as on version histories of what may very
+well be unconnected files, so the impetus for keeping track of changes that occurred at around
+the same time just doesn't exist in the same way.
+
+
+
+How can you use the commands "git log" and "git diff" to view the history of files?
+
+I can use the "git log" to view a summary of the changes, including when they were made and who
+made them, as well as the change messages that they wrote. By using "git log --stat", I can also
+get simple summaries of which files were changed and by how many lines.  "git diff" can give me
+details about a particular change by using "git diff [new file] [old file]", where the new and
+old files can be referenced by the first 4 or more characters of the commit id.  That information
+shows the in-code changes.
+
+
+
+How might using version control make you more confident to make changes that could break something?
+
+If I make a change knowing in advance that jumping between past versions of my code (in order to find
+where and how the break was introduced) is as simple as doing a "git checkout [commit id]" of the old
+revision, I will have a bit more confidence in making the change anyway, since the cleanup shouldn't
+be too bad, or take too long.
+
+
+
+Now that you have a workspace set up, what do you want to use Git for?
+
+Projects, probably. More of the same thing I've been using Github for in my project with Trevor, probably.
