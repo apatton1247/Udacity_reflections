@@ -1,0 +1,20 @@
+What happens when you intialize a repository? Why do you need to do it?
+
+When you run "git init" on an existing directory, you turn that directory into a
+git repository, which is special because it now contains a hidden subdirectory
+called ".git" which contains (and maybe has the code which knows how to deal with)
+metadata for the directory, such as the past histories of its files from that point
+on, as well as data about commits and other git-related metadata. Only after
+initializing a directory as a git repository can you use any of the git functions
+that I've been learning about, otherwise it remains a plain file folder.
+
+
+
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+
+The staging area offers a customizable middle ground, a sort of fresh workspace
+that lets you make sure that each commit does exactly what you want.  It allows you
+to specify which files are to be committed, and lets you have more control over what
+files git is keeping track of, and which files it recognizes as being outside of its
+current tracking.
