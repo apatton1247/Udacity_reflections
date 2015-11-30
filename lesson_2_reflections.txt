@@ -57,3 +57,15 @@ just the branches that have commits published to the repository), and then I can
 to see a graphical representation of where any splits occured in the repository history. That
 should enable me to figure out which branches have which features or why some branches have
 different bugs.
+
+
+
+What is the result of merging two branches together? Why do we represent it in the diagram the
+way we do?
+
+Merging two branches together keeps the changes that were worked into each branch along the way.
+Whereas a branch off of the master makes a line of commits that diverge from the master, and run
+parallel to it, a merge takes the two branches and converges them again, like a parallelogram.
+Use the "git merge [branch 1] [branch 2]" command while the branch you want to merge onto (like
+the master, or whichever branch name you'll refer to going forward to represent this merge and all
+future commits) is the one you have checked out.
