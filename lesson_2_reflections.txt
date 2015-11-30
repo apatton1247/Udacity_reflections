@@ -69,3 +69,15 @@ parallel to it, a merge takes the two branches and converges them again, like a 
 Use the "git merge [branch 1] [branch 2]" command while the branch you want to merge onto (like
 the master, or whichever branch name you'll refer to going forward to represent this merge and all
 future commits) is the one you have checked out.
+
+
+
+What are the pros and cons of Git's automatic merging vs. always doing merges manually?
+
+Goodness, using Git's automatic merging is a serious time-saver, for the most part. If it can merge
+without ambiguity, it will do so, and take care of most of the hassle that would go into a manual
+merge each time. For the less common occasions where two branches operate on exactly the same line
+in different ways, it's best that Git already comes to you to allow you to figure out what's going
+on with the different branches at that spot in the code. If need be, you can ask the people who made
+the commits in the first place, or you can do some digging to find out exactly what changes were made
+and how to peacefully and manually merge them.
