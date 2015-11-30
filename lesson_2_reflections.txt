@@ -18,3 +18,42 @@ that lets you make sure that each commit does exactly what you want.  It allows 
 to specify which files are to be committed, and lets you have more control over what
 files git is keeping track of, and which files it recognizes as being outside of its
 current tracking.
+
+
+
+How can you use the staging area to make sure you have one commit per logical change?
+
+I can put only the files that I want into the staging area to begin with, to make it
+more likely that only the files pertaining to a complete logical change are ready to
+be committed. Also, I can use the "git diff" and "git diff --staged" commands to see
+exactly what has changed between my working directory & staging area and between my
+most recent commit & my staging area, respectively.  In this way I can double-check
+exactly what changes I'm planning to commit, to review if the set of files in the
+staging area and their changes constitute a complete logical change.
+
+
+
+What are some situations when branches would be helpful in keeping your history organized?
+How would branches help?
+
+In the event that I have a couple of different things that I might want to try without
+thoroughly messing up existing code, like an experimental feature, or in the case that I want
+to keep the showcase code working while I mess around with a major code rewrite, a branch
+might accomplish my goal. It introduces a natural branching-off point that I can follow to
+keep track of what changes I started to introduce where, while keeping the master code safe
+from changes that may never make it, but I could still want to keep around.  Maybe in the case
+of a simple game, where I want to keep it as it is, but also introduce a new capability for a
+related new game, like keeping a chess program but using it to branch off into 4-chess.
+
+
+
+How do the diagrams help you visualize the branch structure?
+
+If I use the branching capabilities of git, then I should be able to tell where each branch
+branches off from the main branch.  By using the "git branch" command, I can see a list of all
+of the branches that exist (though maybe just the ones that I have access to, or made? Perhaps
+just the branches that have commits published to the repository), and then I can use the command
+"git log --graph --oneline [1st branch's name] [2nd branch's name] [possibly more branches' names?]"
+to see a graphical representation of where any splits occured in the repository history. That
+should enable me to figure out which branches have which features or why some branches have
+different bugs.
