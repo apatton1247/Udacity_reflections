@@ -1,0 +1,7 @@
+When would you want to use a remote repository rather than keeping your work local?
+
+One of the great parts of using a remote repository, like ones hosted on Github, is
+that you free yourself from the constraint of working on just one machine. When you
+use a remote repository, you have a central workspace accessible from anywhere, if
+you know where to find it, and you or someone else can work on the same project from
+different computers.  This makes group work much easier as well.
