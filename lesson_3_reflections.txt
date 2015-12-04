@@ -5,3 +5,59 @@ that you free yourself from the constraint of working on just one machine. When 
 use a remote repository, you have a central workspace accessible from anywhere, if
 you know where to find it, and you or someone else can work on the same project from
 different computers.  This makes group work much easier as well.
+
+
+
+Why might you want to always pull changes manually rather than having Git automatically
+stay up-to-date with your remote repository?
+
+If you're working on a project with multiple people, who may be changing code at the same
+time as you are, you should be in control of your local workspace.  You could be working
+on the same piece of code as someone else, and their newly-committed changes could
+interfere with yours.  If Git automatically kept your local repository up-to-date with the
+remote repository, who's to say that it would perform this update at a logical time,
+working with you as you make your own changes?  By operating manually, Git provides a
+finer granularity of control, and less ambiguity in your project.
+
+
+
+Describe the differences between forks, clones, and branches.  When should you use one
+instead of another?
+
+Branches are used to keep one project straight, by creating multiple paths that a project
+can exist on simultaneously.  It's great for adding new features without cluttering the
+production-ready code, or for experimental changes that you're not sure will ever make it
+to the master branch, or for a different version.  Regardless, you create branches on a
+project that already exists in your local repository (or one that exists on your Github
+account). Cloning is a literal duplication of a repository, which puts the duplicate in a
+different place than it currently exists. This may be done to copy a repository from Github
+to your local machine, or even to copy it from one location on your local machine to
+somewhere else on your machine.  Cloning duplicates all the history as well, so you could
+technically use it like a branch in time for the project, and discard whichever version you
+don't end up using (be it the experimental change that never worked out, or the old version
+of the project that's now outdated), but branches are much better because everything stays
+in one accessible place, so it's smaller and easier to keep track of and manage. Forks are
+basically clones with intent to change.  They're only used on Github, and they're usually
+used to clone someone else's repository to your own account so that you can do your own work
+on it, while not messing with their repository.  Forks also give credit where credit is due,
+by including a link back to the "parent" repository (the one you forked from).  I believe
+forks are common when you are not a permitted collaborator on a project, but you have ideas
+about changes you would make to a project.  You could later show your work to one of the
+moderators of the original project, or just keep it on your account, but showing that not all
+of the work originated with you.
+
+
+
+What is the benefit of having a copy of the last known state of the remote stored locally?
+
+It provides a point of reference, which you can either compare to, or branch from.  When you
+make commits, it can be helpful to know just how far away from the remote repository you are,
+or at least how far you've come since the last time you synchronized with that remote. Also,
+you can use that point as a new branching-off point for when you get any updated contents
+from the remote repository.  If there are no new contents, that's fine, but if there are new
+contents, you don't want them getting jumbled up with (or overwriting) your changes.  So by
+using a combination of "git fetch [remote name]" to copy any updates from the remote to a new
+branch (actually an updated branch name, probably "origin/master"), and "git merge [updated
+remote's name] [your branch name, maybe "master"], or combining those two into a "git pull
+[remote name]", you can merge your changes into the updated remote without any more hassle
+than merging two branches.
