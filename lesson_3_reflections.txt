@@ -58,6 +58,37 @@ from the remote repository.  If there are no new contents, that's fine, but if t
 contents, you don't want them getting jumbled up with (or overwriting) your changes.  So by
 using a combination of "git fetch [remote name]" to copy any updates from the remote to a new
 branch (actually an updated branch name, probably "origin/master"), and "git merge [updated
-remote's name] [your branch name, maybe "master"], or combining those two into a "git pull
-[remote name]", you can merge your changes into the updated remote without any more hassle
-than merging two branches.
+remote's name (or, more generally, the branch you're merging from)] [your branch name, maybe
+"master" (or, more generally, the branch you're merging into)], or combining those two into a
+"git pull [remote name]", you can merge your changes into the updated remote without any more
+hassle than merging two branches.
+
+
+
+How would you collaborate without using Git or Github? What would be easier or harder?
+
+If I weren't using Git or Github,, it would depend on what sort of project I was working on.
+I might be able to use a service like Google Docs, that could show my changes in real-time,
+so that everyone else who might want to edit the same document or part of a document that I
+was already working there.  But it's possible that for a coding project, for example, I might
+have to use a much more ad-hoc method of collaboration, like emailing everyone on the project
+that I'd be making such-and-such a change to these particular places, and nobody else should
+interfere at those places.  Or maybe a "check-out" procedure, where there's only one "master"
+copy of each file available at any one time, and it gets locked whenever someone checks it
+out.
+
+
+
+When would you want to make changes in a separate branch rather than directly in master? What
+benefits does approach have?
+
+By using a separate branch, I am able to test out changes in the code more easily while being
+secure in the knowledge that there is a current, production-ready version of the code that
+everyone working on the project uses as the "canon" version of the project.  But when I have a
+change that's not completely ready, maybe needing its own set of commits and either takes the
+project in a slightly different direction, or otherwise would be something that I'd want to
+collaborate with others on to get their opinions about whether the changes should be included in
+the master branch, or just to get some help from other people without compromising the integrity
+of the master branch while the work on the separate branch is ongoing, having that separate branch
+would be very helpful, and the pull request system that Github commonly uses for this scenario
+seems like a good one.
